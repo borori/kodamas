@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import kodamas.core
+import argparse
+import shlex
+
+ap = argparse.ArgumentParser()
+ap.add_argument(
+    "-m",
+    "--monitor",
+    dest="monitor",
+    help="Write the absolute path to the file or directory whose change you want to detect"
+)
+ap.add_argument(
+    "-s",
+    "--shell",
+    dest="shell",
+    help="The Shell you want to execute when changing the files"
+)
+''' TODO: Add Error Handling '''
+args = ap.parse_args()
+
+monitor = args.monitor
+shell = shlex.split(args.shell)
+exludes = [".swp", ".swx", ".swpx"]
+
+kodamas.core.main(monitor, shell, exludes)
