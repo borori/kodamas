@@ -5,13 +5,19 @@ File event driven Shell Executer.
 
 It is created as a development tool intended to be used when you want to automatically execute the intended Shell when updating target files.
 
-- easy installation (unnecessary privilege)
-- Less dependency
-- Less configuration
+## Venefit
+- easy installation 
+  - privilege are not require for installation
+  - less dependency (need python and libc)
+  - clear code
+  - aim to work with python 2.7 or higher
+- easy useful
+  - less configuration
 
-This is not distributing to PyPI, only github.
 
 ## Installation
+
+This is not distributing to PyPI, only github.
 
 simple way
 ```sh
