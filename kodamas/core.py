@@ -13,7 +13,7 @@ from kodamas import (
     IN_CLOSE_WRITE
 )
 
-def main(monitored, shell, exclude):
+def main(monitored, shell, exclude, oneshot=False):
     ''' Initialize inotify and watching loop '''
     # Inotify Settings
     libc = ctypes.CDLL(ctypes.util.find_library("c"))
@@ -45,5 +45,7 @@ def main(monitored, shell, exclude):
                     (file_name, time.ctime())
                 )
                 subprocess.call(shell) # python 2.x 3.x compatible
+            if oneshot:
+                break
     except Exception:
         print(sys.exc_info())

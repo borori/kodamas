@@ -21,13 +21,13 @@ This is not distributing to PyPI, only github.
 
 simple way
 ```sh
-pip install git+https://github.com/borori/kodamas
+pip install --user git+https://github.com/borori/kodamas
 ```
 another way 
 ```sh
 # git clone or download zip
 cd {kodamas directory}
-pip install --upgrade .
+pip install --user --upgrade .
 ```
 ```sh
 # git clone or download zip
