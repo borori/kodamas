@@ -10,7 +10,7 @@ It is created as a development tool intended to be used when you want to automat
   - privilege are not require for installation
   - less dependency (need python and libc)
   - clear code
-  - aim to work with python 2.7 or higher
+  - aim to work with python>=2.7,3.5
 - easy useful
   - less configuration
 
@@ -21,13 +21,13 @@ This is not distributing to PyPI, only github.
 
 simple way
 ```sh
-pip install git+https://github.com/borori/kodamas
+pip install --user git+https://github.com/borori/kodamas
 ```
 another way 
 ```sh
 # git clone or download zip
 cd {kodamas directory}
-pip install --upgrade .
+pip install --user --upgrade .
 ```
 ```sh
 # git clone or download zip
@@ -37,20 +37,24 @@ export PYTHONPATH={absolute kodamas directory}
 
 ## Usage
 ```sh
-usage: kodamas [-h] [-m MONITOR] [-s SHELL]
+usage: kodamas [-h] -d PATH -s SHELL [-e EXTENSIONS]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -m MONITOR, --monitor MONITOR
-                        Write the absolute path to the file or directory whose
-                        change you want to detect
+  -d PATH, --dir PATH   (required) Write the absolute path to the directory
+                        whose change you want to detect
   -s SHELL, --shell SHELL
-                        The Shell you want to execute when changing the files
+                        (required) The Shell you want to execute when changing
+                        the files
+  -e EXTENSIONS, --ext EXTENSIONS
+                        (not required, default=all) Extension List that
+                        separated by comma. If the update file extension is
+                        included in this option, Shell will be executed.
+                        Otherwise not do anything. (e.g. -e py,txt,log
 ```
-e.g.
+(e.g.
 ```sh
-kodamas -m /tmp/file.c -s 'gcc /tmp/file.c -o sample'
-kodamas -m /tmp -s 'cd /tmp && make && make test'
+kodamas -d /tmp -s 'gcc /tmp/file.c -o file'
 ```
 
 ## License
