@@ -10,7 +10,7 @@ It is created as a development tool intended to be used when you want to automat
   - privilege are not require for installation
   - less dependency (need python and libc)
   - clear code
-  - aim to work with python 2.7 or higher
+  - aim to work with python>=2.7,3.5
 - easy useful
   - less configuration
 
