@@ -10,7 +10,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='kodamas',
-    version='0.1',
+    version='1.0.0',
     description='',
     long_description=long_description,
     author='boroir',

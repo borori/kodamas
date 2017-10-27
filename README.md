@@ -37,20 +37,24 @@ export PYTHONPATH={absolute kodamas directory}
 
 ## Usage
 ```sh
-usage: kodamas [-h] [-m MONITOR] [-s SHELL]
+usage: kodamas [-h] -d PATH -s SHELL [-e EXTENSIONS]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -m MONITOR, --monitor MONITOR
-                        Write the absolute path to the file or directory whose
-                        change you want to detect
+  -d PATH, --dir PATH   (required) Write the absolute path to the directory
+                        whose change you want to detect
   -s SHELL, --shell SHELL
-                        The Shell you want to execute when changing the files
+                        (required) The Shell you want to execute when changing
+                        the files
+  -e EXTENSIONS, --ext EXTENSIONS
+                        (not required, default=all) Extension List that
+                        separated by comma. If the update file extension is
+                        included in this option, Shell will be executed.
+                        Otherwise not do anything. (e.g. -e py,txt,log
 ```
-e.g.
+(e.g.
 ```sh
-kodamas -m /tmp/file.c -s 'gcc /tmp/file.c -o sample'
-kodamas -m /tmp -s 'cd /tmp && make && make test'
+kodamas -d /tmp -s 'gcc /tmp/file.c -o file'
 ```
 
 ## License
