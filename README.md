@@ -10,29 +10,18 @@ It is created as a development tool intended to be used when you want to automat
   - privilege are not require for installation
   - less dependency (need python and libc)
   - clear code
-  - aim to work with python>=2.7,3.5
+  - aim to work with python>=2.7, 3.5 and LinuxKernel>=2.6.13
 - easy useful
   - less configuration
-
 
 ## Installation
 
 This is not distributing to PyPI, only github.
 
-simple way
 ```sh
 pip install --user git+https://github.com/borori/kodamas
-```
-another way 
-```sh
-# git clone or download zip
-cd {kodamas directory}
-pip install --user --upgrade .
-```
-```sh
-# git clone or download zip
-export PYTHONPATH={absolute kodamas directory}
-{kodamas directory}/bin/kodamas -s ... -m ...
+# you need to add it to your ~/.profile or ~/.bashrc.
+# export PATH=$(python -m site --user-base)/bin:PATH
 ```
 
 ## Usage
